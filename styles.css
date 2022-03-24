@@ -1,0 +1,358 @@
+:root {
+  --prime-clr: #01a3db;
+}
+
+.color-prime {
+  color: var(--prime-clr);
+}
+
+body {
+  color: white;
+  background-color: #0f171e;
+  /* animation: fade-in 2s both 3s; */
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    border: 10px solid rgb(114, 223, 250);
+  }
+  100% {
+    opacity: 1;
+    border: 10px solid salmon;
+  }
+}
+
+.gradient {
+  background: linear-gradient(270deg, #f44336 0%, #e91e63 50%, #3f51b5 100%);
+  background-size: 400%;
+  animation: gradientSlide 4s ease-out infinite;
+}
+
+@keyframes gradientSlide {
+  0% {
+    background-position: 10% 50%;
+  }
+  50% {
+    background-position: 95% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.bg-strive-dark {
+  background-color: #0f171e;
+
+  background-image: -webkit-linear-gradient(top, #1b2530, rgba(27, 37, 48, 0.85));
+  background-image: -o-linear-gradient(top, #1b2530 0, rgba(27, 37, 48, 0.85) 100%);
+  background-image: linear-gradient(180deg, #1b2530 0, rgba(27, 37, 48, 0.85));
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding: 0;
+}
+
+.navbar-dark .navbar-nav .active > .nav-link {
+  border-bottom: 1px solid white;
+}
+
+.navbar-dark .navbar-nav .nav-item {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.carousel-indicators li {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+}
+
+.prime-logo {
+  position: relative;
+  top: 1px;
+}
+
+.prime-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#carouselExampleControls .carousel-control-next,
+#carouselExampleControls .carousel-control-prev {
+  width: 16px;
+}
+
+#carouselExampleControls .carousel-control-prev {
+  left: -16px;
+}
+
+#carouselExampleControls .carousel-control-next {
+  right: -16px;
+}
+
+.title-prime {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+  font-size: 19px;
+  line-height: 24px;
+  transition: color 0.4s linear;
+}
+
+.title-prime:active {
+  color: red;
+}
+
+/* ADDED AFTER THE M2-D4 LESSON */
+.dropdown-menu {
+  background-color: #252e39;
+  padding: 0;
+}
+
+.dropdown-menu .dropdown-item {
+  color: #9ba7b5; /* changed later to have a highlight effect upon hovering */
+  border-bottom: 1px solid #333c47;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.dropdown-menu .last {
+  border-bottom: none;
+}
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+  color: white; /* added this later for getting the aformentioned effect */
+  background-color: #303a46;
+}
+
+.text-truncate {
+  vertical-align: middle;
+  max-width: 62px;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.glass {
+  opacity: 0.6;
+}
+
+.dropdown .dropdown-toggle {
+  color: rgb(194, 194, 194);
+}
+
+.strive-card {
+  position: relative;
+  transition: transform 0.3s ease-out;
+}
+
+.strive-card .infos-container {
+  background: linear-gradient(rgba(27, 37, 48, 0), #1b2530 48px);
+  padding: 32px 24px 24px;
+  position: absolute;
+  transform: translateY(-52px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.3s ease;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.strive-card .infos-container .play-btn:not(:hover) {
+  background: black;
+}
+
+.strive-card .infos-container .play-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: relative;
+  border: 2px solid white;
+  transform: translateX(-180%);
+  opacity: 0;
+  cursor: pointer;
+  transition: transform 0.4s 0.15s, opacity 0.5s 0.2s;
+}
+
+.strive-card .infos-container .play-btn:hover {
+  border-color: transparent;
+}
+
+.strive-card .infos-container .play-btn::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 2px;
+  margin: auto;
+  border-style: solid;
+  border-width: 7px 0 7px 12px;
+  border-color: transparent transparent transparent white;
+}
+
+.strive-card .infos-container .play-btn + h6 {
+  transform: translateX(-48px);
+  transition: transform 0.2s cubic-bezier(0, 0.59, 0.84, 0.93) 0.25s;
+}
+
+.strive-card .infos-container .plus-btn {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  transform: translateX(60px) rotate(160deg);
+  transition: transform 0.4s 0.2s;
+}
+
+.strive-card .infos-container .plus-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  margin: auto;
+  background-color: white;
+}
+
+.strive-card .infos-container .plus-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  height: 2px;
+  background-color: white;
+}
+
+.strive-card .infos-container .prime-title {
+  color: var(--prime-clr);
+}
+
+.strive-card .infos-container > h6:not(.prime-title),
+.strive-card .infos-container > p,
+.strive-card .infos-container .movie-footer {
+  opacity: 0;
+  transition: opacity 0.35s ease-in-out;
+}
+.strive-card .infos-container > h6:not(.prime-title) {
+  transition-delay: 0.3s;
+}
+.strive-card .infos-container > p {
+  transition-delay: 0.4s;
+}
+.strive-card .infos-container .movie-footer {
+  transition-delay: 0.5s;
+}
+
+.strive-card .infos-container > p,
+.strive-card .infos-container .movie-footer {
+  font-size: 0.9rem;
+}
+
+.strive-card .infos-container > p {
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.strive-card .infos-container .movie-footer .bi {
+  font-size: 1.1rem;
+}
+
+.strive-card .infos-container .movie-footer .bi:last-of-type {
+  font-size: 1.3rem;
+}
+
+.strive-card:hover {
+  transform: scale(1.1);
+  z-index: 9;
+}
+
+.strive-card:hover img:first-of-type {
+  border: 2px solid var(--prime-clr);
+  border-bottom: none;
+}
+
+.strive-card:hover .infos-container {
+  opacity: 1;
+  transform: translateY(-48px);
+  /* padding: 48px 24px 24px; */
+
+  border: 2px solid var(--prime-clr);
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  border-top: none;
+
+  pointer-events: unset;
+}
+
+.strive-card:hover .infos-container > h6:not(.prime-title),
+.strive-card:hover .infos-container > p,
+.strive-card:hover .infos-container .movie-footer {
+  opacity: 1;
+}
+
+.strive-card:hover .infos-container .play-btn,
+.strive-card:hover .infos-container .play-btn + h6,
+.strive-card:hover .infos-container .plus-btn {
+  transform: translateX(0) rotate(0);
+  opacity: 1;
+}
+
+a {
+  color: var(--prime-clr);
+}
+
+a:hover {
+  color: #14b5eb;
+}
+
+#toaster {
+  position: absolute;
+  top: 80px;
+  right: 12px;
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  opacity: 0;
+  transition: opacity 1s;
+  z-index: 1;
+}
+
+#toaster.show {
+  opacity: 1;
+}
+
+footer {
+  text-align: center;
+}
+
+footer .footer-logo {
+  display: inline-block;
+  width: 120px;
+  height: 48px;
+  background-image: url("../logo/strivevideo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+footer ul {
+  list-style: none;
+}
+footer ul li {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+footer ul:last-of-type {
+  color: rgba(255, 255, 255, 0.45);
+}
